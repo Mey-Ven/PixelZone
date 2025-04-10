@@ -1,0 +1,53 @@
+/* Styles personnalisés pour la section Stats */
+
+/* Réduire le padding de la section Stats à 20px au lieu de 60px */
+#stats.section,
+.stats.section {
+  padding: 20px 0 !important;
+}
+
+/* Ajuster le padding du titre de section si nécessaire */
+#stats .section-title {
+  padding-bottom: 30px !important;
+}
+
+/* Styles pour les éléments compacts */
+.stats-compact {
+  padding: 10px 5px;
+}
+
+.small-icon {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.small-text {
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+/* Styles pour les compteurs */
+.purecounter {
+  font-size: 1.5rem !important;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+@media (max-width: 576px) {
+  .stats-compact {
+    padding: 5px 2px;
+  }
+  
+  .small-icon {
+    font-size: 1.2rem;
+    margin-bottom: 2px;
+  }
+  
+  .small-text {
+    font-size: 0.7rem;
+  }
+  
+  .purecounter {
+    font-size: 1.2rem !important;
+  }
+}

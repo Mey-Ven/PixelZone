@@ -4,6 +4,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import '../public/css/main.css';
 import '../public/css/no-animations.css'; // Import the no-animations CSS to override transitions
 import '../public/css/optimized-images.css'; // Import CSS for optimized images
+import '../public/css/stats-custom.css'; // Import custom CSS for Stats section
 import '../app/globals.css';
 
 function MyApp({ Component, pageProps }) {
