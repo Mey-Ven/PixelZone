@@ -1,0 +1,51 @@
+/* Remove all animations and transitions from services section */
+.services .service-item,
+.services .service-item .icon,
+.services .service-item .icon i,
+.services .service-item .icon svg,
+.services .service-item .icon svg path {
+  transition: none !important;
+  animation: none !important;
+}
+
+/* Ensure hover states work without animations */
+.services .service-item.item-cyan:hover .icon path {
+  fill: #0dcaf0;
+  transition: none !important;
+}
+
+.services .service-item.item-orange:hover .icon path {
+  fill: #fd7e14;
+  transition: none !important;
+}
+
+.services .service-item.item-teal:hover .icon path {
+  fill: #20c997;
+  transition: none !important;
+}
+
+.services .service-item.item-red:hover .icon path {
+  fill: #df1529;
+  transition: none !important;
+}
+
+.services .service-item.item-indigo:hover .icon path {
+  fill: #6610f2;
+  transition: none !important;
+}
+
+.services .service-item.item-pink:hover .icon path {
+  fill: #f3268c;
+  transition: none !important;
+}
+
+/* Ensure icon color changes work without animations */
+.services .service-item.item-cyan:hover .icon i,
+.services .service-item.item-orange:hover .icon i,
+.services .service-item.item-teal:hover .icon i,
+.services .service-item.item-red:hover .icon i,
+.services .service-item.item-indigo:hover .icon i,
+.services .service-item.item-pink:hover .icon i {
+  color: #fff;
+  transition: none !important;
+}
