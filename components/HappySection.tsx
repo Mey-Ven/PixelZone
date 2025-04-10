@@ -11,7 +11,7 @@ export default function ServicesSection() {
     <div className="row gy-4 justify-content-center">
 
       <div className="col-lg-4 col-md-6 d-flex flex-column align-items-center">
-        <i className="bi bi-emoji-smile"></i>
+        <i className="bi bi-emoji-smile-fill"></i>
         <div className="stats-item">
         <span className="purecounter">24</span>
           <p>Happy Clients</p>
@@ -19,7 +19,7 @@ export default function ServicesSection() {
       </div>
 
       <div className="col-lg-4 col-md-6 d-flex flex-column align-items-center">
-        <i className="bi bi-journal-richtext"></i>
+        <i className="bi bi-folder-fill"></i>
         <div className="stats-item">
         <span className="purecounter">37</span>
           <p>Projects</p>
@@ -27,7 +27,7 @@ export default function ServicesSection() {
       </div>
 
       <div className="col-lg-4 col-md-6 d-flex flex-column align-items-center">
-        <i className="bi bi-headset"></i>
+        <i className="bi bi-clock-fill"></i>
         <div className="stats-item">
           <span className="purecounter">860</span>
           <p>Hours Of Support</p>
