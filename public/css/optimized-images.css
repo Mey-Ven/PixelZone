@@ -1,0 +1,144 @@
+/* Styles for optimized images */
+
+/* Container for optimized images */
+.optimized-image-container {
+  position: relative;
+  overflow: hidden;
+  background-color: #f0f0f0; /* Light gray background while loading */
+  line-height: 0; /* Remove extra space below images */
+}
+
+/* Base image styles */
+.optimized-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+/* Loading state */
+.optimized-image.loading {
+  opacity: 0;
+}
+
+/* Loaded state */
+.optimized-image.loaded {
+  opacity: 1;
+}
+
+/* Placeholder styles */
+.image-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f0f0f0;
+  z-index: 1;
+}
+
+/* Hero background styles */
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-background .optimized-image-container {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-background img,
+.hero-background .optimized-image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Shimmer effect for placeholders */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.image-placeholder.shimmer {
+  background: linear-gradient(to right, #f0f0f0 8%, #e0e0e0 18%, #f0f0f0 33%);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite linear;
+}
+
+/* Mobile optimizations */
+@media (max-width: 767px) {
+  /* Reduce quality and resolution on mobile */
+  .optimized-image {
+    image-rendering: auto; /* Use browser's default rendering */
+  }
+
+  /* Ensure images don't cause layout shifts */
+  .optimized-image-container[data-aspect-ratio] {
+    height: 0;
+    padding-bottom: calc(100% / var(--aspect-ratio));
+  }
+
+  /* Optimize memory usage */
+  .optimized-image.offscreen {
+    content-visibility: auto;
+    contain: strict;
+  }
+
+  /* Hero background optimization for mobile */
+  .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .hero-background .optimized-image-container {
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero-background img,
+  .hero-background .optimized-image {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+/* Fade-in animation for images */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.optimized-image.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Progressive loading effect */
+.optimized-image.progressive {
+  filter: blur(10px);
+  transition: filter 0.3s ease-out;
+}
+
+.optimized-image.progressive.loaded {
+  filter: blur(0);
+}

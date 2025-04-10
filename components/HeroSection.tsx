@@ -1,27 +1,46 @@
 // components/HeroSection.tsx
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import OptimizedImage from './OptimizedImage';
 
 export default function HeroSection() {
+  // État pour suivre si le composant est monté (pour le rendu côté client)
+  const [isMounted, setIsMounted] = useState(false);
+
+  // Définir l'état monté après le montage du composant
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   return (
     <section id="hero" className="hero section light-background">
-      {/* Utiliser l'élément picture pour le support WebP */}
-      <picture>
-        {/* Source WebP pour les navigateurs qui le supportent */}
-        <source
-          srcSet="/img/background.webp"
-          type="image/webp"
-        />
-        {/* Fallback JPG pour les autres navigateurs */}
-        <img
-          src="/img/background.jpg"
-          alt="Background"
-          loading="eager"
-          width="1920"
-          height="1080"
-        />
-      </picture>
+      {/* Utiliser le composant OptimizedImage pour une meilleure performance */}
+      <div className="hero-background">
+        {isMounted ? (
+          <OptimizedImage
+            src="/img/background.jpg"
+            mobileSrc="/img/mobile/background-small.jpg"
+            alt="Background"
+            width={1920}
+            height={1080}
+            priority={true}
+            loading="eager"
+            objectFit="cover"
+            useLqip={true}
+            quality={90}
+            sizes="100vw"
+          />
+        ) : (
+          // Pendant le SSR, utiliser une balise img simple
+          <img
+            src="/img/background.jpg"
+            alt="Background"
+            width="1920"
+            height="1080"
+          />
+        )}
+      </div>
 
       <div className="container">
         <div className="row justify-content-center">
