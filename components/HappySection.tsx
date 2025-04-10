@@ -1,55 +1,41 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React from 'react';
 
 export default function HappySection() {
-  // Charger le script de défilement pour mobile
-  useEffect(() => {
-    // Créer un élément script
-    const script = document.createElement('script');
-    script.src = '/js/happy-section-scroll.js';
-    script.async = true;
-
-    // Ajouter le script au document
-    document.body.appendChild(script);
-
-    // Nettoyer le script lors du démontage du composant
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
   return (
-    <section id="stats" className="stats section">
+    <section id="stats" className="stats section py-4">
       <div className="container" data-aos="fade-up" data-aos-delay="100">
-        {/* Utilisation de la classe row-cols-* pour forcer l'affichage horizontal sur mobile */}
-        <div className="row row-cols-1 row-cols-sm-3 g-3 justify-content-center stats-container">
+        {/* Utilisation de la classe row pour afficher tous les éléments sans défilement */}
+        <div className="row justify-content-center">
 
-          <div className="col">
-            <div className="stats-card d-flex flex-column align-items-center">
-              <i className="bi bi-emoji-smile-fill"></i>
-              <div className="stats-item">
-                <span className="purecounter">24</span>
-                <p>Happy Clients</p>
+          {/* Réduire la taille des colonnes pour qu'elles tiennent toutes sur l'écran */}
+          <div className="col-4 col-md-4">
+            <div className="stats-compact d-flex flex-column align-items-center">
+              <i className="bi bi-emoji-smile-fill small-icon"></i>
+              <div className="stats-item text-center">
+                <span className="purecounter fs-5">24</span>
+                <p className="small-text mb-0">Happy Clients</p>
               </div>
             </div>
           </div>
 
-          <div className="col">
-            <div className="stats-card d-flex flex-column align-items-center">
-              <i className="bi bi-folder-fill"></i>
-              <div className="stats-item">
-                <span className="purecounter">37</span>
-                <p>Projects</p>
+          <div className="col-4 col-md-4">
+            <div className="stats-compact d-flex flex-column align-items-center">
+              <i className="bi bi-folder-fill small-icon"></i>
+              <div className="stats-item text-center">
+                <span className="purecounter fs-5">37</span>
+                <p className="small-text mb-0">Projects</p>
               </div>
             </div>
           </div>
 
-          <div className="col">
-            <div className="stats-card d-flex flex-column align-items-center">
-              <i className="bi bi-clock-fill"></i>
-              <div className="stats-item">
-                <span className="purecounter">860</span>
-                <p>Hours Of Support</p>
+          <div className="col-4 col-md-4">
+            <div className="stats-compact d-flex flex-column align-items-center">
+              <i className="bi bi-clock-fill small-icon"></i>
+              <div className="stats-item text-center">
+                <span className="purecounter fs-5">860</span>
+                <p className="small-text mb-0">Hours Of Support</p>
               </div>
             </div>
           </div>
@@ -57,12 +43,53 @@ export default function HappySection() {
         </div>
       </div>
 
-      {/* Indicateurs de défilement pour mobile */}
-      <div className="stats-scroll-indicator d-block d-sm-none">
-        <div className="dot active"></div>
-        <div className="dot"></div>
-        <div className="dot"></div>
-      </div>
+      <style jsx>{`
+        /* Styles pour les éléments compacts */
+        .stats-compact {
+          padding: 10px 5px;
+        }
+
+        .small-icon {
+          font-size: 1.5rem;
+          margin-bottom: 5px;
+        }
+
+        .small-text {
+          font-size: 0.8rem;
+          white-space: nowrap;
+        }
+
+        /* Réduire l'espacement de la section */
+        .stats.section {
+          padding: 20px 0;
+        }
+
+        /* Styles pour les compteurs */
+        .purecounter {
+          font-size: 1.5rem !important;
+          font-weight: bold;
+          margin-bottom: 0;
+        }
+
+        @media (max-width: 576px) {
+          .stats-compact {
+            padding: 5px 2px;
+          }
+
+          .small-icon {
+            font-size: 1.2rem;
+            margin-bottom: 2px;
+          }
+
+          .small-text {
+            font-size: 0.7rem;
+          }
+
+          .purecounter {
+            font-size: 1.2rem !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }
