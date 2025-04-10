@@ -1,8 +1,9 @@
 'use client';
 
 import React from 'react';
+import OptimizedImage from './OptimizedImage';
 
-export default function ServicesSection() {
+export default function AboutSection() {
   return (
 <section id="about" className="about section">
   <div className="container section-title" data-aos="fade-up">
@@ -14,7 +15,18 @@ export default function ServicesSection() {
 
     <div className="row gy-4 justify-content-center">
       <div className="col-lg-4">
-        <img src="/img/profile-img.png" className="img-fluid" alt="" />
+        <picture>
+          <source srcSet="/img/optimized/profile-img.webp" type="image/webp" />
+          <source srcSet="/img/optimized/profile-img-640.webp" media="(max-width: 640px)" type="image/webp" />
+          <img
+            src="/img/profile-img.png"
+            className="img-fluid progressive-image"
+            alt="Profile"
+            loading="lazy"
+            width="800"
+            height="800"
+          />
+        </picture>
       </div>
       <div className="col-lg-8 content">
         <h2>Creative Visionary & Web Solutions Expert</h2>

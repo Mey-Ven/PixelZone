@@ -19,8 +19,8 @@ export default function HeroSection() {
       <div className="hero-background">
         {isMounted ? (
           <OptimizedImage
-            src="/img/background.jpg"
-            mobileSrc="/img/mobile/background-small.jpg"
+            src="/img/optimized/background-640.avif"
+            mobileSrc="/img/optimized/background-640.avif"
             alt="Background"
             width={1920}
             height={1080}
@@ -28,7 +28,7 @@ export default function HeroSection() {
             loading="eager"
             objectFit="cover"
             useLqip={true}
-            quality={90}
+            quality={80}
             sizes="100vw"
           />
         ) : (

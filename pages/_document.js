@@ -60,9 +60,19 @@ export default function Document() {
         <Main />
         <NextScript />
 
-        {/* Image optimization script for mobile */}
+        {/* Scripts d'optimisation d'images */}
         <script
           src="/js/image-optimizer.js"
+          async
+          defer
+        />
+        <script
+          src="/js/image-preloader.js"
+          async
+          defer
+        />
+        <script
+          src="/js/progressive-loading.js"
           async
           defer
         />

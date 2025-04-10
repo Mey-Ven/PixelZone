@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "optimize-images": "bash ./scripts/run-all-optimizations.sh",
+    "optimize-background": "node ./scripts/optimize-background-images.js",
+    "optimize-profile": "node ./scripts/optimize-profile-image.js",
+    "optimize-portfolio": "node ./scripts/optimize-portfolio-images.js"
   },
   "dependencies": {
     "bootstrap": "^5.3.5",
