@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-export default function ServicesSection() {
+export default function PortfolioSection() {
   return (
 
     <section id="portfolio" className="portfolio section">
@@ -236,10 +236,10 @@ export default function ServicesSection() {
       <div id="portfolioCarousel5" className="carousel slide" data-bs-ride="carousel">
           <div className="carousel-inner">
               <div className="carousel-item active">
-                  <img src="/img/masonry-portfolio/BuildMate/Matériaux_Disponibles.png" className="img-fluid portfolio-img" alt="Materials" />
+                  <img src="/img/masonry-portfolio/BuildMate/Materiaux_Disponibles.png" className="img-fluid portfolio-img" alt="Materials" />
               </div>
               <div className="carousel-item">
-                  <img src="/img/masonry-portfolio/BuildMate/Ajouter_un_Matériau.png" className="img-fluid portfolio-img" alt="Materials" />
+                  <img src="/img/masonry-portfolio/BuildMate/Ajouter_un_Materiau.png" className="img-fluid portfolio-img" alt="Materials" />
               </div>
               <div className="carousel-item">
                   <img src="/img/masonry-portfolio/BuildMate/Liste_Commandes.png" className="img-fluid portfolio-img" alt="Materials" />
@@ -261,10 +261,10 @@ export default function ServicesSection() {
           <h4>Construction Materials Management Platform</h4>
       </div>
       <div className="portfolio-zoom-icon">
-          <a href="/img/masonry-portfolio/BuildMate/Matériaux_Disponibles.png" data-gallery="portfolio-gallery-Materials" className="glightbox preview-link">
+          <a href="/img/masonry-portfolio/BuildMate/Materiaux_Disponibles.png" data-gallery="portfolio-gallery-Materials" className="glightbox preview-link">
               <i className="bi bi-zoom-in"></i>
           </a>
-          <a href="/img/masonry-portfolio/BuildMate/Ajouter_un_Matériau.png" data-gallery="portfolio-gallery-Materials" className="glightbox preview-link" style={{ display: 'none' }}></a>
+          <a href="/img/masonry-portfolio/BuildMate/Ajouter_un_Materiau.png" data-gallery="portfolio-gallery-Materials" className="glightbox preview-link" style={{ display: 'none' }}></a>
           <a href="/img/masonry-portfolio/BuildMate/Liste_Commandes.png" data-gallery="portfolio-gallery-Materials" className="glightbox preview-link" style={{ display: 'none' }}></a>
           <a href="/img/masonry-portfolio/BuildMate/Devises.jpeg" data-gallery="portfolio-gallery-Materials" className="glightbox preview-link" style={{ display: 'none' }}></a>
       </div>
