@@ -6,9 +6,17 @@ import '../public/css/no-animations.css'; // Import the no-animations CSS to ove
 import '../public/css/optimized-images.css'; // Import CSS for optimized images
 import '../public/css/stats-custom.css'; // Import custom CSS for Stats section
 import '../app/globals.css';
+import Head from 'next/head';
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+  return (
+    <>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+      </Head>
+      <Component {...pageProps} />
+    </>
+  );
 }
 
 export default MyApp;
